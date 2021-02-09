@@ -1,0 +1,16 @@
+[package]
+name = "structform-derive"
+version = "0.1.0"
+edition = "2018"
+authors = [
+  "Justin Wernick <justin.wernick@panoptix.io>",
+  "Panoptix OSS maintainers <oss@panoptix.io>",
+]
+license = "MIT/Apache-2.0"
+
+[lib]
+proc-macro=true
+
+[dependencies]
+syn="1"
+quote="1"

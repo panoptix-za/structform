@@ -1,5 +1,6 @@
 StructForm
 ==========
+[![build status](https://panoptix.semaphoreci.com/badges/structform/branches/main.svg)](https://panoptix.semaphoreci.com/projects/structform)
 
 Library for managing interactive forms which encodes validation rules
 using the type system.

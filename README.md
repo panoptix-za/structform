@@ -9,7 +9,7 @@ using the type system.
 
 Forms are a common way of capturing data in many programs. It's nice
 in these programs if the form can give realtime feedback on the data
-being captured data. Additionally, if you have a separate frontend and
+being captured. Additionally, if you have a separate frontend and
 backend communicating over an API, it's good to keep the validation
 rules enforced by the frontend and backend the same.
 
@@ -82,7 +82,7 @@ TODO: Document validation rules using the newtype pattern
 ## Examples
 
 - [Basic login page example](./structform/tests/login_example.rs)
-- TODO: Submit attempted example
+- [Submit attempted tracking](./structform/tests/submit_attempted_example.rs)
 - TODO: Custom submit implementation example
 - TODO: Subforms example
 - TODO: Optional subforms example

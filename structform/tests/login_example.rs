@@ -27,7 +27,7 @@ struct LoginForm {
 
 // Apart from deriving the StructForm trait, this will also create an
 // enum for us to refer to the various fields. The derived code will look like this:
-// ```rust
+// ```
 // pub enum LoginFormField {
 //     Username,
 //     Password,

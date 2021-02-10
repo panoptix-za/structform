@@ -2,10 +2,11 @@ use structform::{
     derive_form_input, impl_text_input_with_stringops, ParseAndFormat, ParseError, StructForm,
 };
 
-// This example builds on the [login example](./login_example.rs),
-// adding in the submit_attempted feature. This example is written
-// assuming that you're already familiar with the login example, so if
-// not please refer to that first.
+// This example shows how StructForm can track if a form has been submitted yet.
+
+// This example builds on the [login example](./login_example.rs).
+// This example is written assuming that you're already familiar with
+// the login example, so if not please refer to that first.
 
 // Like in the login example, we start with some strongly typed
 // data. This is probably a type that you can share with other parts

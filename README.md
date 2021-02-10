@@ -9,7 +9,7 @@ using the type system.
 
 Forms are a common way of capturing data in many programs. It's nice
 in these programs if the form can give realtime feedback on the data
-being captured data. Additionally, if you have a separate frontend and
+being captured. Additionally, if you have a separate frontend and
 backend communicating over an API, it's good to keep the validation
 rules enforced by the frontend and backend the same.
 

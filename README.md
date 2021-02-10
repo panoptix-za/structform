@@ -84,6 +84,7 @@ TODO: Document validation rules using the newtype pattern
 - [Basic login page](./structform/tests/login_example.rs)
 - [Submit attempted tracking](./structform/tests/submit_attempted_example.rs)
 - [Custom submit function](./structform/tests/custom_submit_function_example.rs)
+- [Validation rules](./structform/tests/validation_example.rs)
 - TODO: Subforms example
 - TODO: Optional subforms example
 - TODO: List of subforms example

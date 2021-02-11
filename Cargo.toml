@@ -1,5 +1,22 @@
+[package]
+name = "structform"
+description = "Library for managing interactive forms which encodes validation rules using the type system."
+version = "0.1.0"
+edition = "2018"
+repository = "https://github.com/panoptix-za/structform"
+license = "MIT/Apache-2.0"
+keywords = ["form", "web", "gui"]
+categories = ["web-programming", "gui"]
+authors = [
+  "Justin Wernick <justin.wernick@panoptix.io>",
+  "Panoptix OSS maintainers <oss@panoptix.io>",
+]
+readme = "README.md"
+
+[dependencies]
+structform-derive = { version = "=0.1.0", path = "./structform-derive"}
+
 [workspace]
 members = [
-  "structform",
-  "structform-derive",
+  "./structform-derive"
 ]

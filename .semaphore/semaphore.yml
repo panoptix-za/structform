@@ -14,5 +14,5 @@ blocks:
         - name: cargo test
           commands:
             - checkout
-            - cargo build --verbose
-            - cargo test --verbose
+            - cargo build --workspace --verbose
+            - cargo test --workspace --verbose

@@ -1,5 +1,7 @@
 StructForm
 ==========
+[![crates.io](https://img.shields.io/crates/v/structform.svg)](https://crates.io/crates/structform)
+[![crates.io](https://img.shields.io/crates/v/structform-derive.svg)](https://crates.io/crates/structform-derive)
 [![build status](https://panoptix.semaphoreci.com/badges/structform/branches/main.svg)](https://panoptix.semaphoreci.com/projects/structform)
 
 Library for managing interactive forms which encodes validation rules

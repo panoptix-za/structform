@@ -86,7 +86,7 @@ TODO: Document validation rules using the newtype pattern
 - [Custom submit function](./structform/tests/custom_submit_function_example.rs)
 - [Validation rules](./structform/tests/validation_example.rs)
 - [Subforms and optional subforms](./structform/tests/subforms_example.rs)
-- TODO: List of subforms example
+- [List of subforms](./structform/tests/list_of_subforms_example.rs)
 
 ## License
 

@@ -110,10 +110,12 @@ fn optional_subforms_can_be_toggled_on_and_off() {
     assert!(form.secondary_address.is_none());
 
     // Rather before using the secondary address, you need to toggle
-    // it to `Some`. In this case, the string passed to set_input is
-    // ignored. It works well if you tie this message to the changed
-    // event on an HTML checkbox, and only show the rest of the
-    // secondary address in your HTML if `secondary_address` is Some.
+    // it to `Some`. The toggle field is always your subform name with
+    // `Toggle` in front, like `ToggleSecondaryAddress`. In this
+    // case, the string passed to set_input is ignored. It works well
+    // if you tie this message to the changed event on an HTML
+    // checkbox, and only show the rest of the secondary address in
+    // your HTML if `secondary_address` is Some.
     form.set_input(UserDetailsFormField::ToggleSecondaryAddress, "".to_string());
     assert!(form.secondary_address.is_some());
     assert_eq!(

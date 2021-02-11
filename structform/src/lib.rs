@@ -90,6 +90,7 @@ pub trait ParseAndFormat<T> {
     fn format(value: &T) -> String;
 }
 
+/// Creates a new form input to be used in a StructForm.
 #[macro_export]
 macro_rules! derive_form_input {
     ($input:ident) => {

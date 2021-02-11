@@ -1,3 +1,13 @@
+/// Implements `ParseAndFormat<$type> for $text_input<$type>`, and also
+/// implements `ParseAndFormat<Option<$type>>> for $text_input<Option<$type>>`.
+///
+/// This will parse by trimming the string input and then calling
+/// `str::parse`. If the input string is empty after trimming, then
+/// parse will return a `ParseError::Required` for the
+/// `ParseAndFormat<$type>` case, and return `None` for the
+/// `ParseAndFormat<Option<$type>>` case.
+///
+/// Formatting is done using `std::string::ToString`.
 #[macro_export]
 macro_rules! impl_text_input_with_stringops {
     ($text_input: ident, $type_name: literal, $type: ty) => {
@@ -55,6 +65,16 @@ macro_rules! impl_text_input_with_stringops {
     };
 }
 
+/// Implements `ParseAndFormat<Vec<$type>> for $text_input<Vec<$type>>`.
+///
+/// This will parse by splitting the string on commas, and
+/// individually parsing each split using `str::parse`. Empty strings
+/// will result in an empty `Vec`.
+///
+/// Formatting is done using `std::string::ToString` on each element
+/// of the `Vec` and then joining them with a comma.
+///
+/// Note: This is not a good idea of your value might contain commas.
 #[macro_export]
 macro_rules! impl_vec_text_input_with_stringops {
     ($text_input: ident, $type_name: literal, $type: ty) => {

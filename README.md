@@ -73,11 +73,43 @@ The best way to learn to use StructForm is to look at the [examples](#Examples).
 
 ## Form Inputs
 
-TODO: Document how to get form inputs
+StructForm is unusual in that it doesn't come with form
+inputs. Rather, it gives you macros that you use to derive your own
+form inputs. This lets you specify which types of inputs you have in
+your application, and how those different inputs might convert from
+strings typed by your end users to strongly typed data differently.
+
+The basic way of creating a form input is to call the
+`derive_form_input` macro.
+
+```rust
+derive_form_input! {MyFormInput}
+```
+
+This will create a struct for you called `MyFormInput`, with an
+`input` string that you tie to your UI. You can now specify how
+`MyFormInput` handles any model type, including details like trimming
+the input strings or not.
+
+```rust
+impl ParseAndFormat<MyInputModel> for MyFormInput<Model> {
+    fn parse(value: &str) -> Result<MyInputModel, ParseError> { todo!() }
+    fn format(value: &MyInputModel) -> String { todo!() }
+}
+```
+
+For some common implementations of `ParseAndFormat`, see the macros
+`impl_text_input_with_stringops` and
+`impl_numeric_input_with_stringops`.
 
 ## Validation
 
-TODO: Document validation rules using the newtype pattern
+Validation should be added by making the types that your form inputs
+wrap enforce your validation rules. The [newtype
+pattern](https://www.worthe-it.co.za/blog/2020-10-31-newtype-pattern-in-rust.html)
+is an excellent way to add these rules. See the [validation rules
+example](./structform/tests/validation_example.rs) for an example of
+how this can be done.
 
 ## Examples
 

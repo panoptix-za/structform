@@ -1,3 +1,15 @@
+/// Implements `ParseAndFormat<$type> for $numeric_input<$type>`, and also
+/// implements `ParseAndFormat<Option<$type>>> for $numeric_input<Option<$type>>`.
+///
+/// This will parse by first converting the string input to an
+/// $underlying_numeric_type, which should be something like u32 or
+/// i64, then calling
+/// `std::convert::TryFrom<$underlying_numeric_type>`. If the input
+/// string is empty after trimming, then parse will return a
+/// `ParseError::Required` for the `ParseAndFormat<$type>` case, and
+/// return `None` for the `ParseAndFormat<Option<$type>>` case.
+///
+/// Formatting is done using `std::string::ToString`.
 #[macro_export]
 macro_rules! impl_numeric_input_with_stringops {
     ($numeric_input: ident, $type_name: literal, $type: ty, $underlying_numeric_type: ty) => {
@@ -70,6 +82,10 @@ macro_rules! impl_numeric_input_with_stringops {
     };
 }
 
+/// Implements `ParseAndFormat<$type> for $numeric_input<$type>`.
+///
+/// This works the same as `impl_numeric_input_with_stringops`, except if input
+/// string is empty after trimming, then parse will return $type::default().
 #[macro_export]
 macro_rules! impl_numeric_input_with_default_with_stringops {
     ($numeric_input: ident, $type_name: literal, $type: ty, $underlying_numeric_type: ty) => {
